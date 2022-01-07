@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "server.callback.port",
+      "type": "java.lang.String",
+      "description": "Port on which server will receive callbacks."
+    },
+    {
+      "name": "server.callback.path",
+      "type": "java.lang.String",
+      "description": "Path on which server will receive callbacks."
+    }
+  ]
+}
