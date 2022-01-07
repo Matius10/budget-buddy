@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
@@ -18,7 +17,7 @@ class CallbackController {
     private final CallbackService callbackService;
 
     @GetMapping
-    public ResponseEntity<Object> callback(HttpServletRequest request, @RequestParam Map<String, String> params) {
+    public ResponseEntity<Object> callback(@RequestParam Map<String, String> params) {
         final boolean wasProcessed = callbackService.processCallback(params);
         return wasProcessed ? ResponseEntity.noContent().build() : ResponseEntity.badRequest().build();
     }
